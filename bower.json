@@ -1,0 +1,10 @@
+{
+  "name": "new_project",
+  "version": "0.1.0",
+  "dependencies": {
+    "HTML5-Reset": "~2.1.2",
+    "jquery": "1.11",
+    "modernizr": "~2.8.3",
+    "picturefill": "~2.2.0"
+  }
+}

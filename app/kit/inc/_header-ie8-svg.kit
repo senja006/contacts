@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="ru" class="ie-9" id="html"> <![endif]-->
+<!--[if IE 8]> <html lang="ru" class="ie-8" id="html"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="ru" id="html"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title><!-- $title --></title>
+
+	<!-- build:css css/vendor.min.css -->
+	<link rel="stylesheet" type="text/css" href="css/vendor/reset.css"/>
+	<!-- endbuild -->
+	
+	<!-- build:css css/combined.min.css -->
+	<link rel="stylesheet" href="css/sprite.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!-- endbuild -->
+
+	<!-- build:js js/vendor-head.min.js -->
+	<script type="text/javascript" src="js/vendor/modernizr.js"></script>
+	<script type="text/javascript" src="js/vendor/picturefill.js"></script>
+	<script type="text/javascript" src="js/vendor/classie.js"></script>
+	<script type="text/javascript" src="js/vendor/placeholders.js"></script>
+	<!-- endbuild -->
+
+	<!-- build:js js/combined-head.min.js -->
+	<script type="text/javascript" src="js/detectMobileBrowser.js"></script>
+	<!-- endbuild -->
+</head>
+<body>
+	<!-- begin container-svg -->
+	<div id="container-svg"></div>
+	<!-- end container-svg -->
+	<script type="text/javascript">
+		$('#container-svg').html(SVG_SYMBOLS);
+	</script>
+	<!-- begin page  -->
+	<div class="<!-- $class-page -->">
