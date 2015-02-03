@@ -3,21 +3,36 @@
 @font-face {
     font-weight: normal;
     font-style: normal;
-    font-family: "ProximaNovaLight";
-    src: url('../fonts/proxima_nova_light.eot');
-    src: url('../fonts/proxima_nova_light.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/proxima_nova_light.woff') format('woff'),
-         url('../fonts/proxima_nova_light.ttf') format('truetype');
+    font-family: "SegoeUIRegular";
+    src: url('../fonts/SegoeUIRegular.eot');
+    src: url('../fonts/SegoeUIRegular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/SegoeUIRegular.woff') format('woff'),
+         url('../fonts/SegoeUIRegular.ttf') format('truetype');
+}
+@font-face {
+    font-weight: normal;
+    font-style: normal;
+    font-family: "SegoeUIBold";
+    src: url('../fonts/SegoeUIBold.eot');
+    src: url('../fonts/SegoeUIBold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/SegoeUIBold.woff') format('woff'),
+         url('../fonts/SegoeUIBold.ttf') format('truetype');
 }
 html, body {
-	/*font-family: "ElektraLightPro";*/
 	font-size: 16px;
 	height: 100%;
+	font-family: "SegoeUIRegular";
 }
 .page {
 	width: 100%;
 	min-height: 100%;
 	font-size: 16px;
+	min-width: 820px;
+	padding: 74px 0;
+}
+.container {
+	width: 800px;
+	margin: 0 auto;
 }
 li {
 	list-style: none;
@@ -36,6 +51,40 @@ li {
 	display: inline-block;
 	height: 100%;
 	vertical-align: middle;
+}
+.page-bg {
+	background: url(../img/design/bg-page.jpg) no-repeat;
+	background-size: cover;
+	position: fixed;
+	z-index: -1;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+h1 {
+	color: #000;
+	font-size: 24px;
+	font-weight: 400;
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 5px;
+}
+.button {
+	display: inline-block;
+	vertical-align: middle;
+	background: rgba(255, 255, 255, 0.74);
+	border: 1px solid #CCC;
+	border-radius: 5px;
+	text-decoration: none;
+	color: #333;
+	font-size: 14px;
+	padding: 7px 26px;
+	transition: all 0.1s linear;
+}
+.button:hover {
+	background: #CCC;
+	/*color: #fff;*/
 }
 
 /* @group animated */
@@ -435,6 +484,71 @@ li {
 }
 
 /* @end */
+
+/* @end */
+
+/* @group contacts */
+
+.contacts__top {
+	height: 34px;
+	font-size: 0;
+	margin-bottom: 20px;
+}
+.contacts__top:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+.contacts__top:before {
+	content: '';
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+.mode {
+	float: right;
+	height: 100%;
+	font-size: 0;
+}
+.mode:before {
+	content: '';
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+.mode__in {
+	display: inline-block;
+	vertical-align: middle;
+}
+.mode__a {
+	display: inline-block;
+	margin-left: 26px;
+}
+.contacts__bottom {
+	background-color: rgba(255, 255, 255, 0.74);
+	border: 1px solid #DDD;
+	border-radius: 4px;
+	padding: 20px 12px;
+}
+.contacts__table {
+	width: 100%;
+}
+.contacts__table td {
+	color: #333;
+	font-size: 12px;
+	border-bottom: 1px solid #dddddd;
+	padding: 0 10px 0 8px;
+	height: 34px;
+	vertical-align: middle;
+}
+.contacts__table tbody tr:last-child td {
+	border-bottom: none;
+}
+.contacts__table thead td {
+	font-size: 14px;
+	font-family: "SegoeUIBold";
+	border-bottom: 2px solid #dddddd;
+}
 
 /* @end */
 

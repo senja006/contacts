@@ -4,6 +4,7 @@ prod
 prog
 .sass-cache
 *.css.map
+*.espressostorage
 npm-debug.log
 tmp
 config.codekit

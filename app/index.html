@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <!--[if IE 9]> <html lang="ru" class="ie-9" id="html"> <![endif]-->
-<!--[if gt IE 9]><!--> <html lang="ru" id="html"> <!--<![endif]-->
+<!--[if gt IE 9]><!--> <html lang="ru" ng-app="app"> <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Главная страница</title>
+	<title>Контакты</title>
 	
 	<!-- build:css css/vendor.min.css -->
 	<link rel="stylesheet" type="text/css" href="css/vendor/reset.css"/>
@@ -17,35 +17,76 @@
 
 	<!-- build:js js/vendor-head.min.js -->
 	<script type="text/javascript" src="js/vendor/modernizr.js"></script>
-	<script type="text/javascript" src="js/vendor/picturefill.js"></script>
-	<script type="text/javascript" src="js/vendor/classie.js"></script>
 	<script type="text/javascript" src="js/vendor/placeholders.js"></script>
-	<!-- endbuild -->
-
-	<!-- build:js js/combined-head.min.js -->
-	<script type="text/javascript" src="js/detectMobileBrowser.js"></script>
+	<script type="text/javascript" src="js/vendor/jquery.js"></script>
+	<script type="text/javascript" src="js/vendor/angular.js"></script>
+	<script type="text/javascript" src="js/vendor/firebase.js"></script>
+	<script type="text/javascript" src="js/vendor/angularfire.js"></script>
 	<!-- endbuild -->
 </head>
 <body>
+	<div class="page-bg"></div>
 	<!-- begin page  -->
 	<div class="page">
-<!-- begin content -->
-<div class="content">
-	
 
-
-</div>
-<!-- end content -->
+		<!-- begin content -->
+		<div class="content">
+			<!-- begin contacts -->
+			<section class="contacts">
+				<div class="container">
+					<h1>Контакты</h1>
+					<div class="contacts__top">
+						<div class="mode">
+							<div class="mode__in">
+								<a href="#" class="mode__a"><span class="icon icon--table"></span></a>
+								<a href="#" class="mode__a"><span class="icon icon--list"></span></a>
+							</div>	
+						</div>
+						<a href="#" class="button">Добавить</a>
+					</div>
+					<div class="contacts__bottom" ng-controller="contactsListCtrl">
+						<table class="contacts__table">
+							<col width="67">
+							<col width="160">
+							<col width="160">
+							<col width="160">
+							<col width="225">
+							<thead>
+								<tr>
+									<td>#</td>
+									<td>Имя</td>
+									<td>Фамилия</td>
+									<td>Телефон</td>
+									<td>Email</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="contact in contacts">
+									<td>{{$index + 1}}</td>
+									<td>{{contact.name}}</td>
+									<td>{{contact.lastname}}</td>
+									<td>{{contact.phone}}</td>
+									<td>{{contact.email}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+			<!-- end contacts -->
+		</div>
+		<!-- end content -->
 
 	</div>
 	<!-- end page -->
 	
 	<!-- build:js js/vendor.min.js -->
-	<script type="text/javascript" src="js/vendor/jquery.js"></script>
 	<!-- endbuild -->
 
 	<!-- build:js js/combined.min.js -->
 	<script src="js/app.js"></script>
+	<script type="text/javascript" src="js/services/fireBase.js"></script>
+	<script type="text/javascript" src="js/controllers/contactsListCtrl.js"></script>
 	<!-- endbuild -->
 </body>
 </html>
