@@ -4,7 +4,7 @@ app.factory('myFireBase', ['$firebase', function($firebase){
 	return {
 		get: function() {
 			var sync = $firebase(ref);
-			return sync.$asObject();
+			return sync.$asArray();
 		},
 	};
 }]);

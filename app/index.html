@@ -4,6 +4,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- <base href="http://macbook-pro-sergei.local:5757" /> -->
+	<base href="/contacts/app/">
 	<title>Контакты</title>
 	
 	<!-- build:css css/vendor.min.css -->
@@ -22,6 +24,7 @@
 	<script type="text/javascript" src="js/vendor/angular.js"></script>
 	<script type="text/javascript" src="js/vendor/firebase.js"></script>
 	<script type="text/javascript" src="js/vendor/angularfire.js"></script>
+	<script type="text/javascript" src="js/vendor/angular-route.js"></script>
 	<!-- endbuild -->
 </head>
 <body>
@@ -32,55 +35,11 @@
 		<!-- begin content -->
 		<div class="content">
 			<!-- begin contacts -->
-			<section class="contacts" ng-controller="contactsListCtrl">
+			<section class="contacts">
 				<div class="container">
 					<h1>Контакты</h1>
-					<div class="contacts__top">
-						<div class="mode">
-							<div class="mode__in">
-								<a href="#" class="mode__a" ng-class="{active: mode}" ng-click="toggleMode($event)"><span class="icon icon--table"></span></a>
-								<a href="#" class="mode__a" ng-class="{active: !mode}" ng-click="toggleMode($event)"><span class="icon icon--list"></span></a>
-							</div>
-						</div>
-						<a href="add-contacts.html" class="button">Добавить</a>
-					</div>
-					<div class="contacts__bottom">
-						<div class="contacts__mode-table" ng-show="mode">
-							<table class="contacts__table">
-								<col width="67">
-								<col width="160">
-								<col width="160">
-								<col width="160">
-								<col width="225">
-								<thead>
-									<tr>
-										<td>#</td>
-										<td>Имя</td>
-										<td>Фамилия</td>
-										<td>Телефон</td>
-										<td>Email</td>
-									</tr>
-								</thead>
-								<tbody>
-									<tr ng-repeat="contact in contacts">
-										<td>{{$index + 1}}</td>
-										<td>{{contact.name}}</td>
-										<td>{{contact.lastname}}</td>
-										<td>{{contact.phone}}</td>
-										<td>{{contact.email}}</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						<div class="contacts__mode-list" ng-show="!mode">
-							<ul class="contacts__mode-list-ul">
-								<li class="contacts__mode-list-li" ng-repeat="contact in contacts">
-									<div class="contacts__img"></div>
-									<span class="contacts__mode-list-text">{{contact.name}} {{contact.lastname}}</span>
-									<span class="contacts__mode-list-text">{{contact.phone}}</span>
-								</li>
-							</ul>
-						</div>
+					<div class="contacts__in" ng-view>
+						
 					</div>
 				</div>
 			</section>

@@ -1,0 +1,35 @@
+<div class="contacts__top">
+	<a href="/" class="button-icon"><span class="icon icon--pointer-left"></span></a>
+</div>
+<div class="contacts__bottom">
+	<div class="contacts__add">
+		<form name="changeContact" ng-submit="submitForm()">
+			<div class="contacts__add-right">
+				<div class="contacts__add-row">
+					<label class="label">Имя</label>
+					<input ng-model="user.name" class="input" type="text" name="name" placeholder="Имя контакта" required />
+				</div>
+				<div class="contacts__add-row">
+					<label class="label">Фамилия</label>
+					<input ng-model="user.lastname" class="input" type="text" name="lastname" placeholder="Фамилия контакта" required />
+				</div>
+				<div class="contacts__add-row">
+					<label class="label">Контактная информация</label>
+					<div class="container-input">
+						<div class="container-icon"><span class="icon icon--mail"></span></div>
+						<input ng-model="user.email" class="input input--mini" type="email" name="email" placeholder="yourmail@gmail.com" />
+					</div>
+					<div class="container-input">
+						<div class="container-icon"><span class="icon icon--phone"></span></div>
+						<input ng-model="user.phone" class="input input--mini" type="number" name="text" placeholder="7 918 123 45 66" />
+					</div>
+				</div>
+			</div>
+			<div class="contacts__add-left">
+				<div class="contacts__img"></div>
+				<a ng-show="buttonDel" class="button button--right">Удалить</a>
+				<input class="button" ng-disabled="changeContact.$invalid" value="Сохранить" type="submit">
+			</div>
+		</form>
+	</div>
+</div>
