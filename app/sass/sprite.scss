@@ -6,9 +6,21 @@
 .icon--list {
 	@include s(icon-list);
 }
-.icon--table:hover {
+.icon--table:hover, .active .icon--table {
 	@include s(icon-table-gray);
 }
-.icon--list:hover {
+.icon--list:hover, .active .icon--list {
 	@include s(icon-list-gray);
+}
+.icon--pointer-left {
+	@include s(icon-pointer-left);
+}
+.icon--pointer-left:hover {
+	@include s(icon-pointer-left-gray);
+}
+.icon--mail {
+	@include s(icon-mail);
+}
+.icon--phone {
+	@include s(icon-phone);
 }

@@ -1,2 +1,2 @@
-var app = angular.module('app', ['contacts']);
-var contacts =  angular.module('contacts', ['firebase']);
+var app = angular.module('app', ['contacts', 'firebase']);
+var contacts =  angular.module('contacts', []);

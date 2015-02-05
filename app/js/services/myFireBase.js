@@ -1,4 +1,4 @@
-contacts.factory('myFireBase', ['$firebase', function($firebase){
+app.factory('myFireBase', ['$firebase', function($firebase){
 	var url = 'https://contacts-all.firebaseio.com';
 	var ref = new Firebase(url);
 	return {
