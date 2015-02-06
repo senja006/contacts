@@ -4,7 +4,16 @@ var app = angular.module('app', [
 	'myRoute'
 ]);
 
-var contacts = angular.module('contacts', ['firebase']);
+var contacts = angular.module('contacts', ['firebase', 'blueimp.fileupload'])
+	.config(['$httpProvider', 'fileUploadProvider', function ($httpProvider, fileUploadProvider) {
+			angular.extend(fileUploadProvider.defaults, {
+		    disableImageResize: /Android(?!.*Chrome)|Opera/
+		        .test(window.navigator.userAgent),
+		    maxFileSize: 2000000,
+		    acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i
+		});
+	}]);
+
 var myRoute = angular.module('myRoute', ['ngRoute'])
 	.constant('myBaseUrl', {
 		'pageIndex': '/',
@@ -13,10 +22,7 @@ var myRoute = angular.module('myRoute', ['ngRoute'])
 	})
 	.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
-		$locationProvider.html5Mode({
-			enabled: true
-  			// requireBase: false
-		});
+		$locationProvider.html5Mode(true);
 
 		$routeProvider
 			.when('/', {
