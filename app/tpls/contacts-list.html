@@ -1,5 +1,5 @@
 <div class="contacts__top">
-	<div class="mode">
+	<div class="mode" ng-show="contacts.length">
 		<div class="mode__in">
 			<a class="mode__a" ng-class="{active: mode}" ng-click="toggleMode()"><span class="icon icon--table"></span></a>
 			<a class="mode__a" ng-class="{active: !mode}" ng-click="toggleMode()"><span class="icon icon--list"></span></a>
@@ -15,6 +15,7 @@
 			<col width="160">
 			<col width="160">
 			<col width="225">
+			<col width="0">
 			<thead>
 				<tr>
 					<td>#</td>
@@ -22,6 +23,7 @@
 					<td>Фамилия</td>
 					<td>Телефон</td>
 					<td>Email</td>
+					<td></td>
 				</tr>
 			</thead>
 			<tbody>
@@ -31,6 +33,14 @@
 					<td>{{contact.lastname}}</td>
 					<td>{{contact.phone}}</td>
 					<td>{{contact.email}}</td>
+					<td>
+						<div class="contacts__edit">
+							<div class="contacts__edit-in">
+								<a href="edit-contacts/{{contact.$id}}" ng-click="getId(contact)" class="contacts__edit-a"><span class="icon icon--edit">Редактировать</span></a>
+								<a ng-click="contacts.$remove(contact)" class="contacts__edit-a"><span class="icon icon--del">Удалить</span></a>
+							</div>	
+						</div>
+					</td>
 				</tr>
 			</tbody>
 		</table>
@@ -38,7 +48,15 @@
 	<div class="contacts__mode-list" ng-show="!mode">
 		<ul class="contacts__mode-list-ul">
 			<li class="contacts__mode-list-li" ng-repeat="contact in contacts">
-				<div class="contacts__img"></div>
+				<div class="contacts__img">
+					<img src="{{contact.srcUploadImg}}">
+					<div class="contacts__edit">
+						<div class="contacts__edit-in">
+							<a href="edit-contacts/{{contact.$id}}" ng-click="getId(contact)" class="contacts__edit-a"><span class="icon icon--edit">Редактировать</span></a>
+							<a ng-click="contacts.$remove(contact)" class="contacts__edit-a"><span class="icon icon--del">Удалить</span></a>
+						</div>	
+					</div>
+				</div>
 				<span class="contacts__mode-list-text">{{contact.name}} {{contact.lastname}}</span>
 				<span class="contacts__mode-list-text">{{contact.phone}}</span>
 			</li>

@@ -1,22 +1,15 @@
 var app = angular.module('app', [
 	'contacts', 
 	'firebase', 
-	'myRoute'
+	'myRoute',
+	'angularFileUpload'
 ]);
 
 var contacts = angular.module('contacts', ['firebase']);
 var myRoute = angular.module('myRoute', ['ngRoute'])
-	.constant('myBaseUrl', {
-		'pageIndex': '/',
-		'pageAdd': '/add-contacts',
-		'pageEdit': '/edit-contacts'
-	})
 	.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
-		$locationProvider.html5Mode({
-			enabled: true
-  			// requireBase: false
-		});
+		$locationProvider.html5Mode(true);
 
 		$routeProvider
 			.when('/', {
@@ -25,7 +18,8 @@ var myRoute = angular.module('myRoute', ['ngRoute'])
 			.when('/add-contacts', {
 				templateUrl: 'tpls/form.html',
 				controller: 'contactsAddCtrl'})
-			.when('/edit-contacts', 
-				{templateUrl: 'tpls/form.html'})
+			.when('/edit-contacts/:id',
+				{templateUrl: 'tpls/form.html',
+				controller: 'contactsEditCtrl'})
 			.otherwise({redirectTo: '/'});
 	}]);

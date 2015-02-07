@@ -1,13 +1,21 @@
-contacts.controller('contactsListCtrl', ['$scope', 'myFireBase', function($scope, myFireBase) {
+contacts.controller('contactsListCtrl', ['$scope', 'myFireBase', '$firebase', '$rootScope', '$location', function($scope, myFireBase, $firebase, $rootScope, $location) {
 
 	// режима просмотра по умолчанию
-	$scope.mode = true;
+	if(!$rootScope.mode) {
+		$rootScope.mode = false;
+	}
 
 	// получение списка контактов
-	$scope.contacts = myFireBase.get();
+	$rootScope.contacts = myFireBase.get();
 
 	// переключение режима просмотра
 	$scope.toggleMode = function() {
-		$scope.mode = !$scope.mode;
+		$rootScope.mode = !$rootScope.mode;
 	};
+
+	// получение id редактируемого контакта
+	$scope.getId = function(contact) {
+		$rootScope.contactToEditId = contact.$id;
+	};
+
 }]);

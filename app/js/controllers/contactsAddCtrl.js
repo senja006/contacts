@@ -1,15 +1,19 @@
-contacts.controller('contactsAddCtrl', ['$scope', 'myFireBase', '$firebase', function($scope, myFireBase, $firebase){
+contacts.controller('contactsAddCtrl', ['$scope', 'myFireBase', '$firebase', 'fileUploader', '$rootScope', '$location', function($scope, myFireBase, $firebase, fileUploader, $rootScope, $location){
+
+	$rootScope.contactToEdit = {};
 
 	// скрытие кнопки удалить
 	$scope.buttonDel = false;
 
-	// получени списка контактов
-	var contacts = myFireBase.get();
-
-	// отправка формы
+	// сохранение контакта
 	$scope.submitForm = function() {
-		console.log(contacts);
-		contacts.$add($scope.user);
+		$rootScope.contacts.$add($rootScope.contactToEdit);
+		$location.path('/');
+	};
+
+	// загрузка изображения
+	$scope.uploadFile = function(file) {
+		fileUploader.upload(file);
 	};
 
 }]);

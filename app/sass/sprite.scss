@@ -24,3 +24,9 @@
 .icon--phone {
 	@include s(icon-phone);
 }
+.icon--del {
+	@include s(icon-del);
+}
+.icon--edit {
+	@include s(icon-edit);
+}

@@ -41,6 +41,10 @@ gulp.task('move-file-prod', function() {
   .pipe(gulp.dest('prod/fonts'));
   gulp.src(['app/img/**', '!app/img/design/sprite-images', '!app/img/design/sprite-images-2x'])
   .pipe(gulp.dest('prod/img'));
+  gulp.src('app/tpls/**')
+  .pipe(gulp.dest('prod/tpls'));
+  gulp.src('app/upload/**')
+  .pipe(gulp.dest('prod/upload'));
 });
 
 // Сборка проекта для передачи программисту
@@ -55,6 +59,10 @@ gulp.task('move-file-prog', function() {
   .pipe(gulp.dest('prog/js'));
   gulp.src('app/*.html')
   .pipe(gulp.dest('prog'));
+  gulp.src('app/tpls/**')
+  .pipe(gulp.dest('prog/tpls'));
+  gulp.src('app/upload/**')
+  .pipe(gulp.dest('prog/upload'));
 });
 
 // Комбинирование медиа запросов в css

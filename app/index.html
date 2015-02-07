@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<!-- <base href="http://macbook-pro-sergei.local:5757" /> -->
-	<base href="/contacts/app/">
+	<base href="/">
 	<title>Контакты</title>
 	
 	<!-- build:css css/vendor.min.css -->
@@ -25,6 +25,8 @@
 	<script type="text/javascript" src="js/vendor/firebase.js"></script>
 	<script type="text/javascript" src="js/vendor/angularfire.js"></script>
 	<script type="text/javascript" src="js/vendor/angular-route.js"></script>
+	<script type="text/javascript" src="js/vendor/angular-file-upload-shim.js"></script>
+	<script type="text/javascript" src="js/vendor/angular-file-upload.js"></script>
 	<!-- endbuild -->
 </head>
 <body>
@@ -56,8 +58,10 @@
 	<!-- build:js js/combined.min.js -->
 	<script src="js/app.js"></script>
 	<script type="text/javascript" src="js/services/myFireBase.js"></script>
+	<script type="text/javascript" src="js/services/fileUploader.js"></script>
 	<script type="text/javascript" src="js/controllers/contactsListCtrl.js"></script>
 	<script type="text/javascript" src="js/controllers/contactsAddCtrl.js"></script>
+	<script type="text/javascript" src="js/controllers/contactsEditCtrl.js"></script>
 	<!-- endbuild -->
 </body>
 </html>
