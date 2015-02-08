@@ -3,33 +3,35 @@
 /* @group main */
 
 @font-face {
+    font-family: 'SegoeUIRegular';
     font-weight: normal;
     font-style: normal;
-    font-family: "SegoeUIRegular";
+
     src: url('../fonts/SegoeUIRegular.eot');
     src: url('../fonts/SegoeUIRegular.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/SegoeUIRegular.woff') format('woff'),
-         url('../fonts/SegoeUIRegular.ttf') format('truetype');
+    url('../fonts/SegoeUIRegular.woff') format('woff'),
+    url('../fonts/SegoeUIRegular.ttf') format('truetype');
 }
 @font-face {
+    font-family: 'SegoeUIBold';
     font-weight: normal;
     font-style: normal;
-    font-family: "SegoeUIBold";
+
     src: url('../fonts/SegoeUIBold.eot');
     src: url('../fonts/SegoeUIBold.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/SegoeUIBold.woff') format('woff'),
-         url('../fonts/SegoeUIBold.ttf') format('truetype');
+    url('../fonts/SegoeUIBold.woff') format('woff'),
+    url('../fonts/SegoeUIBold.ttf') format('truetype');
 }
 html, body {
+    font-family: 'SegoeUIRegular';
     font-size: 16px;
     height: 100%;
-    font-family: "SegoeUIRegular";
 }
 .page {
-    width: 100%;
-    min-height: 100%;
     font-size: 16px;
+    width: 100%;
     min-width: 820px;
+    min-height: 100%;
     padding: 74px 0;
 }
 .container {
@@ -41,81 +43,81 @@ li {
 }
 .icon {
     display: inline-block;
-    vertical-align: middle;
     overflow: hidden;
+    vertical-align: middle;
     text-indent: -9999px;
 }
 .clearfix:after {
-    content: "";
     display: block;
     clear: both;
+    content: '';
 }
 .vertical-align-middle:before {
-    content: "";
     display: inline-block;
     height: 100%;
+    content: '';
     vertical-align: middle;
 }
 .page-bg {
-    background: url(../img/design/bg-page.jpg) no-repeat;
-    background-size: cover;
     position: fixed;
     z-index: -1;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+    background: url(../img/design/bg-page.jpg) no-repeat;
+    background-size: cover;
 }
 h1 {
-    color: #000;
     font-size: 24px;
     font-weight: 400;
+    margin-bottom: 5px;
     text-align: center;
     text-transform: uppercase;
-    margin-bottom: 5px;
+    color: #000;
 }
 .button {
+    font-family: 'SegoeUIRegular';
+    font-size: 14px;
     display: inline-block;
+    padding: 7px 26px;
+    transition: all .1s linear;
     vertical-align: middle;
-    background: rgba(255, 255, 255, 0.74);
-    border: 1px solid #CCC;
-    border-radius: 5px;
     text-decoration: none;
     color: #333;
-    font-size: 14px;
-    padding: 7px 26px;
-    transition: all 0.1s linear;
-    font-family: "SegoeUIRegular";
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, .74);
 }
 .button:hover {
-    background: #CCC;
+    background: #ccc;
     /*color: #fff;*/
 }
 .button:disabled {
-    background: #eeeeee;
     cursor: default;
+    background: #eee;
 }
 .button--right {
     float: right;
 }
 .input {
-    display: block;
-    height: 39px;
-    width: 100%;
-    outline: none;
-    color: #909090;
+    font-family: 'SegoeUIRegular';
     font-size: 12px;
     font-weight: 400;
-    font-family: "SegoeUIRegular";
-    background-color: #FFF;
-    border: 1px solid #CCC;
-    border-radius: 4px;
-    box-shadow: inset -0.1px 1px 1px rgba(0, 1, 1, 0.1);
+    display: block;
+    width: 100%;
+    height: 39px;
     padding: 0 15px;
+    color: #909090;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    background-color: #fff;
+    box-shadow: inset -.1px 1px 1px rgba(0, 1, 1, .1);
 }
 .input:focus {
-	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
-	border-color: #66afe9;
+    border-color: #66afe9;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
 }
 .container-input {
     position: relative;
@@ -127,37 +129,37 @@ h1 {
 a {
     cursor: pointer;
 }
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     margin: 0;
+
+    -webkit-appearance: none;
 }
 
 /* @group animated */
 
 .selector {
     -webkit-animation-name: name-animated;
-    animation-name: name-animated;
+            animation-name: name-animated;
     -webkit-animation-timing-function: linear;
             animation-timing-function: linear;
-    
 }
 
 .animated {
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
     -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
 }
 .animated.infinite {
     -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
 }
 .animated.hinge {
     -webkit-animation-duration: 2s;
-    animation-duration: 2s;
+            animation-duration: 2s;
 }
 
 /* @end */
@@ -186,8 +188,8 @@ input::-webkit-inner-spin-button {
 .pagination__a {
     font-size: 16px;
     display: table-cell;
-    vertical-align: middle;
     transition: all .1s linear;
+    vertical-align: middle;
 }
 .pagination__a:before {
     display: inline-block;
@@ -217,15 +219,15 @@ input::-webkit-inner-spin-button {
     right: 11px;
 }
 .ui-state-error, .ui-state-valid.error {
-    border-color: #FF5A1F !important;
+    border-color: #ff5a1f !important;
 }
 .ui-state-valid:not(.button) {
     border-color: #95c785;
 }
 input.ng-invalid.ng-dirty {
-	border-color: #843534;
+    border-color: #843534;
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #ce8483;
-} 
+}
 
 /* @end */
 
@@ -243,9 +245,9 @@ input.ng-invalid.ng-dirty {
     position: absolute;
     top: 0;
     right: 0;
-    height: 100%;
     /*padding: 0 14px;*/
     width: 25px;
+    height: 100%;
     text-align: center;
     background: #000;
 }
@@ -278,13 +280,13 @@ input.ng-invalid.ng-dirty {
     opacity: 1;
 }
 .select .scroller__track {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
     width: 5px;
     transition: opacity .3s linear;
     opacity: 0;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
 }
 .select__option:hover .scroller__track {
     opacity: 1;
@@ -311,22 +313,22 @@ input.ng-invalid.ng-dirty {
     margin: 0;
 }
 .select .scroller__bar {
-    width: 5px;
-    background: #000;
     position: absolute;
     right: 0;
+    width: 5px;
+    background: #000;
 }
 .input__select {
     width: 100%;
     height: 100%;
 }
 .scroller {
-    height: 163px;
     overflow: hidden;
+    height: 163px;
 }
 .scroller__in {
-    height: 100%;
     overflow-y: scroll;
+    height: 100%;
 }
 .scroller__in::-webkit-scrollbar {
     width: 0;
@@ -348,9 +350,9 @@ input.ng-invalid.ng-dirty {
     top: 0;
     right: 0;
     bottom: 0;
-    overflow: hidden;
     /*width: 52px;*/
     left: 0;
+    overflow: hidden;
     cursor: pointer;
     text-align: center;
     /*background-color: #48cbe8;*/
@@ -396,9 +398,9 @@ input.ng-invalid.ng-dirty {
 
 .slider {
     position: relative;
+    overflow: hidden;
     height: 292px;
     border: 1px solid #d0d0d0;
-    overflow: hidden;
 }
 .slider__li {
     position: absolute;
@@ -407,9 +409,9 @@ input.ng-invalid.ng-dirty {
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0;
     -webkit-transform: translateX(0);
             transform: translateX(0);
+    opacity: 0;
 }
 .slider__li img {
     width: 100%;
@@ -431,9 +433,9 @@ input.ng-invalid.ng-dirty {
     background: #000;
 }
 .is-selected .slider__pagination-a {
-    background: red;
-    pointer-events: none;
     cursor: default;
+    pointer-events: none;
+    background: red;
 }
 .slider__pagination-ul {
     display: inline-block;
@@ -533,30 +535,30 @@ input.ng-invalid.ng-dirty {
 /* @group contacts */
 
 .contacts__top {
-    height: 34px;
     font-size: 0;
+    height: 34px;
     margin-bottom: 20px;
 }
 .contacts__top:after {
-    content: '';
     display: table;
     clear: both;
+    content: '';
 }
 .contacts__top:before {
-    content: '';
     display: inline-block;
     height: 100%;
+    content: '';
     vertical-align: middle;
 }
 .mode {
+    font-size: 0;
     float: right;
     height: 100%;
-    font-size: 0;
 }
 .mode:before {
-    content: '';
     display: inline-block;
     height: 100%;
+    content: '';
     vertical-align: middle;
 }
 .mode__in {
@@ -571,151 +573,157 @@ input.ng-invalid.ng-dirty {
     pointer-events: none;
 }
 .contacts__bottom {
-    background-color: rgba(255, 255, 255, 0.74);
-    border: 1px solid #DDD;
-    border-radius: 4px;
     padding: 20px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, .74);
 }
 .contacts__table {
     width: 100%;
 }
 .contacts__table td {
-    color: #333;
     font-size: 12px;
-    border-bottom: 1px solid #dddddd;
-    padding: 0 10px 0 8px;
+    max-width: 100px;
     height: 34px;
+    padding: 0 10px 0 8px;
+    transition: all .1s linear;
     vertical-align: middle;
-    transition: all 0.1s linear;
+    word-wrap: break-word;
+    color: #333;
+    border-bottom: 1px solid #ddd;
 }
 .contacts__table tbody tr:last-child td {
     border-bottom: none;
 }
 .contacts__table thead td {
+    font-family: 'SegoeUIBold';
     font-size: 14px;
-    font-family: "SegoeUIBold";
-    border-bottom: 2px solid #dddddd;
+    border-bottom: 2px solid #ddd;
 }
 .contacts__mode-list-li {
     float: left;
-    min-height: 170px;
     width: 130px;
+    min-height: 170px;
     margin-left: 30px;
+}
+.contacts__mode-list-li:nth-child(5n+1) {
+    clear: both;
 }
 .contacts__mode-list-ul {
     margin-left: -30px;
 }
 .contacts__mode-list-ul:after {
-    content: '';
     display: table;
     clear: both;
+    content: '';
 }
 .contacts__img {
-    width: 130px;
-    height: 130px;
-    background-color: #EEE;
-    border: 1px solid #CCC;
-    border-radius: 6px;
-    margin-bottom: 6px;
-    text-align: center;
     font-size: 0;
     position: relative;
+    width: 130px;
+    height: 130px;
+    margin-bottom: 6px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #eee;
 }
 .contacts__img:before {
-	content: '';
-	display: inline-block;
-	height: 100%;
-	vertical-align: middle;
+    display: inline-block;
+    height: 100%;
+    content: '';
+    vertical-align: middle;
 }
 .contacts__img img {
-    max-height: 100%;
-    max-width: 100%;
     display: inline-block;
+    max-width: 100%;
+    max-height: 100%;
     vertical-align: middle;
 }
 .contacts__mode-list-text {
+    font-size: 12px;
     display: block;
     text-align: center;
+    word-wrap: break-word;
     color: #000;
-    font-size: 12px;
 }
 .contacts__img-text {
-	font-size: 20px;
-	position: absolute;
-	z-index: 0;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	color: #fff;
-	background: rgba(0, 0, 0, .4);
-	transition: opacity 0.1s linear;
-	opacity: 0;
-	border-radius: 5px;
+    font-size: 20px;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity .1s linear;
+    opacity: 0;
+    color: #fff;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, .4);
 }
 .contacts__img-text:before {
-	content: '';
-	display: inline-block;
-	height: 100%;
-	vertical-align: middle;
+    display: inline-block;
+    height: 100%;
+    content: '';
+    vertical-align: middle;
 }
 .contacts__img:hover .contacts__img-text {
-	opacity: 1;
+    opacity: 1;
 }
 .contacts__edit {
-	position: relative;
-	height: 20px;
-	opacity: 0;
-	visibility: hidden;
-	transition: all 0.1s linear;
+    position: relative;
+    visibility: hidden;
+    height: 20px;
+    transition: all .1s linear;
+    opacity: 0;
 }
 .contacts__img .contacts__edit {
-	position: absolute;
-	top: 0;
-	height: 100%;
-	left: 0;
-	width: 100%;
-	text-align: center;
-	border-radius: 6px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-radius: 6px;
 }
 .contacts__table tr:hover .contacts__edit {
-	opacity: 1;
-	visibility: visible;
+    visibility: visible;
+    opacity: 1;
 }
 .contacts__img:hover .contacts__edit {
-	background: rgba(255, 255, 255, .5);
-	opacity: 1;
-	visibility: visible;
+    visibility: visible;
+    opacity: 1;
+    background: rgba(255, 255, 255, .5);
 }
 .contacts__table tbody tr:hover td {
-	background: #d3d3d3;
+    background: #d3d3d3;
 }
 .contacts__edit-in {
-	position: absolute;
-	top: 0;
-	right: 0;
-	height: 100%;
-	white-space: nowrap;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    white-space: nowrap;
 }
 .contacts__img .contacts__edit-in {
-	height: 100%;
-	width: 100%;
+    width: 100%;
+    height: 100%;
 }
 .contacts__edit-in:before {
-	content: '';
-	display: inline-block;
-	height: 100%;
-	vertical-align: middle;
+    display: inline-block;
+    height: 100%;
+    content: '';
+    vertical-align: middle;
 }
 .contacts__edit-a {
-	vertical-align: middle;
-	margin-left: 3px;
+    margin-left: 3px;
+    vertical-align: middle;
 }
 .contacts__img .contacts__edit-a {
-	margin-left: 10px;
+    margin-left: 10px;
 }
 .contacts__edit-a:first-child {
-	margin-left: 0;
+    margin-left: 0;
 }
 
 /* @end */
@@ -726,47 +734,47 @@ input.ng-invalid.ng-dirty {
     padding: 0 91px 0 88px;
 }
 .contacts__add:after {
-    content: '';
     display: table;
     clear: both;
+    content: '';
 }
 .contacts__add-right {
     float: right;
     width: 268px;
 }
 .label {
-    display: block;
-    color: #010101;
     font-size: 14px;
     line-height: 12px;
+    display: block;
     margin-bottom: 7px;
+    color: #010101;
 }
 .contacts__add .container-icon {
+    font-size: 0;
     position: absolute;
     top: 1px;
     bottom: 1px;
     left: 1px;
-    text-align: center;
-    font-size: 0;
-    border-right: 1px solid #cccccc;
     width: 39px;
-    background-color: #EEE;
+    text-align: center;
+    border-right: 1px solid #ccc;
     border-radius: 4px 0 0 4px;
+    background-color: #eee;
 }
 .contacts__add .container-icon ~ .input {
     padding-left: 50px;
 }
 .contacts__add .container-icon:before {
-    content: '';
     display: inline-block;
     height: 100%;
+    content: '';
     vertical-align: middle;
 }
 .contacts__add .contacts__img {
+    position: relative;
     width: 200px;
     height: 200px;
     margin-bottom: 10px;
-    position: relative;
 }
 .contacts__add .button {
     width: 91px;
@@ -794,12 +802,9 @@ input.ng-invalid.ng-dirty {
     only screen and (-o-min-device-pixel-ratio: 2/1),
     only screen and (min--moz-device-pixel-ratio: 1.5),
     only screen and (min-device-pixel-ratio: 1.5),
-    only screen and (min-device-pixel-ratio: 2), 
+    only screen and (min-device-pixel-ratio: 2),
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
-    
-    
-
 }
 
 /* @end */

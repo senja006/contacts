@@ -3,7 +3,6 @@ app.factory('fileUploader', ['$upload', '$rootScope', function($upload, $rootSco
 	return {
 		upload: function(file) {
 			if(file.length < 1) return;
-            console.log('загрузка');
 			$upload.upload({
                 url: 'upload/uploadFile.php',
                 file: file

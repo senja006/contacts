@@ -45,6 +45,8 @@ gulp.task('move-file-prod', function() {
   .pipe(gulp.dest('prod/tpls'));
   gulp.src('app/upload/**')
   .pipe(gulp.dest('prod/upload'));
+  gulp.src('app/favicon.ico')
+  .pipe(gulp.dest('prod/'));
 });
 
 // Сборка проекта для передачи программисту
@@ -63,6 +65,8 @@ gulp.task('move-file-prog', function() {
   .pipe(gulp.dest('prog/tpls'));
   gulp.src('app/upload/**')
   .pipe(gulp.dest('prog/upload'));
+  gulp.src('app/favicon.ico')
+  .pipe(gulp.dest('prog/'));
 });
 
 // Комбинирование медиа запросов в css

@@ -3,7 +3,7 @@
 </div>
 <div class="contacts__bottom">
 	<div class="contacts__add">
-		<form name="changeContact" ng-submit="submitForm()">
+		<form name="changeContact" ng-submit="submitForm()" novalidate>
 			<div class="contacts__add-right">
 				<div class="contacts__add-row">
 					<label class="label">Имя<sup>*</sup></label>
@@ -31,7 +31,8 @@
 					<span class="contacts__img-text">изменить</span>
 					<label class="label__file"><input id="input__file" type="file" ng-model="file" ng-file-select="uploadFile(file)"></label>
 				</div>
-				<a href="/" ng-click="contactToEdit.$remove()" ng-show="buttonDel" class="button button--right">Удалить</a>
+				<!-- <a href="/" ng-click="contactToEdit.$remove()" ng-show="buttonDel" class="button button--right">Удалить</a> -->
+				<button ng-click="contactToEdit.$remove()" ng-show="buttonDel" class="button button--right">Удалить</button>
 				<input class="button" ng-disabled="changeContact.$invalid" value="Сохранить" type="submit">
 			</div>
 		</form>
