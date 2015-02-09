@@ -6,8 +6,10 @@ contacts.controller('contactsListCtrl', ['$scope', 'myFireBase', '$firebase', '$
 	}
 
 	// получение списка контактов
-	$rootScope.contacts = myFireBase.get();
-
+	if(!$rootScope.contacts) {
+		$rootScope.contacts = myFireBase.get();
+	}
+	
 	// переключение режима просмотра
 	$scope.toggleMode = function() {
 		$rootScope.mode = !$rootScope.mode;
